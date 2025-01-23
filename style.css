@@ -55,8 +55,10 @@ h1, h2, h3 {
 }
 
 #home .profile-img {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    /* height: 350px; */
+    max-width: 400PX;
+    height: auto;
     object-fit: cover;
     border-radius: 50%;
     transition: transform 0.3s ease; /* Transisi gambar */
@@ -468,6 +470,7 @@ h1, h2, h3 {
 .passion-img-container img {
     width: 300px;  /* Lebar gambar disesuaikan */
     height: 300px;
+    max-width: 300px;
     object-fit: cover;
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -883,6 +886,33 @@ footer p {
 
 
 @media (max-width: 768px) {
+    /* Menyesuaikan gambar di semua bagian */
+    #home .profile-img,
+    .intro-img,
+    .passion-img-container img,
+    #projects .project-img {
+        width: 100%;
+        height: auto;  /* Menjaga agar gambar tetap proporsional */
+    }
+
+    .passion-img-container {
+        flex-direction: column; /* Menyusun gambar menjadi kolom */
+        gap: 15px;
+    }
+
+    .contact-item {
+        width: 100%; /* Mengubah lebar kontak menjadi 100% pada layar kecil */
+    }
+
+    .intro-text {
+        font-size: 16px;
+    }
+
+    /* Gambar pada bagian introduction */
+    .intro-img-container {
+        max-width: 100%;
+    }
+
     #home {
         padding: 80px 0;
     }
