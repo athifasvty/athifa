@@ -1,0 +1,942 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5; /* Background terang untuk kenyamanan mata */
+    color: #333; /* Warna teks gelap untuk kontras yang baik */
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+section {
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Home Section */
+#home {
+    background: #D8C4B6; /* Gradasi biru tua ke biru terang */
+    color: white;
+    padding: 120px 0;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    animation: fadeInHome 1.5s ease-out; /* Animasi fade-in pada home section */
+}
+
+@keyframes fadeInHome {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#home .profile-img {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease; /* Transisi gambar */
+    animation: zoomIn 1s ease-out; /* Animasi gambar zoom-in */
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#home .text-container {
+    text-align: left;
+    max-width: 600px;
+    animation: slideInText 1s ease-out; /* Animasi teks masuk dari kiri */
+}
+
+@keyframes slideInText {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#home h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: white;
+    animation: fadeInText 1s ease-out; /* Animasi teks muncul */
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#home p {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeInText 2s ease-out forwards; /* Animasi teks deskripsi */
+}
+
+/* Efek Hover pada Gambar Profil */
+#home .profile-img:hover {
+    transform: scale(1.1); /* Efek zoom saat hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+}
+
+/* Animasi saat tombol 'Contact Me' muncul */
+.contact-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 25px; 
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    animation: slideUpBtn 1s ease-out 1.5s forwards; /* Animasi tombol muncul */
+}
+
+@keyframes slideUpBtn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-btn:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+
+
+/* Introduction Section */
+#introduction {
+    padding: 100px 0;
+    background: #F0EBE3;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Container untuk teks dan gambar */
+#introduction .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+/* Animasi untuk teks */
+.intro-text {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Animasi untuk heading */
+.intro-text h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #C5705D;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards; /* Animasi fade-in */
+}
+
+/* Animasi untuk paragraf */
+.intro-text p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #000000;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.5s forwards; /* Animasi fade-in */
+}
+
+/* Animasi untuk gambar */
+.intro-img-container {
+    max-width: 500px;
+    flex-shrink: 0;
+    opacity: 0;
+    animation: fadeInRight 1s ease-out 2s forwards; /* Animasi gambar dari kanan */
+    position: relative;
+}
+
+/* Gambar di bagian Introduction */
+.intro-img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    animation: blinkEffect 2s infinite; /* Animasi kelap-kelip pada gambar */
+}
+
+/* Animasi kelap-kelip pada gambar */
+@keyframes blinkEffect {
+    0% {
+        opacity: 1; /* Gambar terlihat */
+    }
+    50% {
+        opacity: 0.4; /* Gambar setengah transparan */
+    }
+    100% {
+        opacity: 1; /* Gambar kembali terlihat */
+    }
+}
+
+/* Animasi pergerakan gambar dari kanan */
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px); /* Mulai dari kanan */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Akhirnya berada di posisi semula */
+    }
+}
+
+/* Animasi pergerakan teks ke atas */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Mulai dari bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Akhirnya berada di posisi semula */
+    }
+}
+
+
+/* Animasi gambar perkenalan muncul dari kanan */
+@keyframes slideInImage {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animasi teks perkenalan muncul */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animasi tombol "Contact Me" dengan sedikit delay */
+.contact-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 25px; 
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    animation: slideUpBtn 2s ease-out 1s forwards; /* Animasi tombol muncul setelah delay */
+}
+
+@keyframes slideUpBtn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-btn:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+
+/* Animasi untuk bagian Pengalaman */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#experience {
+    padding: 80px 0;
+    background-color: #F0EBE3;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menjaga konten berada di tengah secara horizontal */
+    justify-content: center;
+    text-align: center;
+}
+
+#experience h2 {
+    font-size: 36px;
+    color: #C5705D;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Container dan daftar pengalaman */
+#experience ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    justify-items: center;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out 1s forwards;
+}
+
+.experience-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 5); /* Bayangan lebih besar dan lebih gelap */
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.5s;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek Hover pada Pengalaman */
+.experience-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
+}
+
+.experience-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+}
+
+.experience-text {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.experience-text p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Animasi Fade In untuk Teks dan Daftar Pengalaman */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animasi untuk gambar pengalaman */
+@keyframes imageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#passion {
+    padding: 60px 0;
+    background-color: #F0EBE3; /* Memberikan latar belakang yang lembut */
+    text-align: center;
+}
+
+#passion h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #C5705D;
+}
+
+#passion p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.passion-img-container {
+    display: flex; /* Flexbox untuk gambar berdampingan */
+    justify-content: center;
+    gap: 20px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInUp 2s ease-out 1.5s forwards;
+}
+
+.passion-img-container img {
+    width: 300px;  /* Lebar gambar disesuaikan */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.passion-img-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.passion-img-container .img-1 {
+    animation: imageFadeIn 2s ease-out 2s forwards;
+}
+
+.passion-img-container .img-2 {
+    animation: imageFadeIn 2s ease-out 2.5s forwards;
+}
+
+.passion-img-container .img-3 {
+    animation: imageFadeIn 2s ease-out 3s forwards;
+}
+
+/* Animasi untuk gambar */
+@keyframes imageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsif: Mengubah gambar menjadi kolom pada layar kecil */
+@media screen and (max-width: 768px) {
+    .passion-img-container {
+        flex-direction: column; /* Menyusun gambar menjadi kolom pada layar kecil */
+        gap: 15px;
+    }
+
+    .passion-img-container img {
+        width: 80%; /* Menyesuaikan ukuran gambar pada layar kecil */
+    }
+}
+
+
+/* Projects Section */
+#projects {
+    padding: 80px 0;
+    background-color: #F0EBE3; /* Latar belakang biru muda */
+}
+
+/* Projects Section */
+#projects {
+    padding: 80px 20px;
+    background-color: #F0EBE3; /* Latar belakang lembut */
+}
+
+/* Mengatur grid layout proyek */
+#projects .project-item {
+    background: #D8C4B6; 
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Transisi untuk hover */
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards; /* Animasi muncul dari bawah */
+    transform: translateY(30px); /* Mulai dari bawah */
+}
+
+/* Efek Hover pada Proyek */
+#projects .project-item:hover {
+    transform: translateY(-10px); /* Meningkat sedikit */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat */
+    background-color: #C5705D; /* Ganti warna latar belakang */
+    color: white; /* Ubah warna teks saat hover */
+}
+
+/* Gambar pada proyek */
+#projects .project-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Animasi zoom pada gambar */
+}
+
+/* Zoom pada gambar saat hover */
+#projects .project-item:hover .project-img {
+    transform: scale(1.1); /* Perbesar gambar saat hover */
+}
+
+/* Judul proyek */
+#projects h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #C5705D;
+    font-weight: 700;
+    transition: color 0.3s ease; /* Transisi warna saat hover */
+}
+
+/* Deskripsi proyek */
+#projects p {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 400;
+}
+
+/* Animasi Muncul untuk Project */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Mulai dari bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Muncul ke posisi semula */
+    }
+}
+
+/* Responsif untuk mobile dan tablet */
+@media (max-width: 768px) {
+    #projects .project-item {
+        flex-direction: column; /* Menyusun proyek secara vertikal */
+        text-align: center;
+        padding: 30px;
+    }
+
+    #projects .project-img {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    #projects h3 {
+        font-size: 24px;
+    }
+
+    #projects p {
+        font-size: 14px;
+    }
+}
+
+
+/* Certificates Section */
+#certificates {
+    padding: 80px 0;
+    background-color: #F0EBE3; 
+}
+
+.certificate-item {
+    display: flex;
+    align-items: center;
+    background: #D8C4B6;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+#certificate h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #C5705D; /* Warna biru */
+    font-weight: 600;
+}
+
+.certificate-item h3 {
+    font-size: 24px;
+    color: #C5705D;
+    font-weight: 700;
+}
+
+.certificate-item p {
+    font-size: 16px;
+    color: #020202;
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 0;
+    background-color: #F0EBE3; /* Latar belakang biru muda */
+    color: #333;
+}
+
+#contact .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #C5705D; /* Warna biru */
+    font-weight: 600;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-item .icon {
+    font-size: 30px;
+    color: #C5705D;
+    margin-bottom: 15px;
+}
+
+.contact-item .details h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #C5705D;
+    font-weight: 600;
+}
+
+.contact-item .details a {
+    color: #C5705D;
+    text-decoration: none;
+}
+
+.contact-item .details a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+footer {
+    background: #121212;
+    color: white;
+    padding: 30px 0;
+}
+
+footer p {
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.contact-item .icon {
+    font-size: 35px;
+    color: #C5705D;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover .icon {
+    transform: rotate(20deg); /* Putar ikon saat hover */
+}
+
+/* Reset beberapa style default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #C5705D; /* Warna navbar */
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar-menu li a:hover {
+    color: #c5705d; /* Hover color */
+}
+
+/* Navbar toggle checkbox (hidden by default) */
+.navbar-toggle {
+    display: none;
+}
+
+/* Navbar icon (hamburger) styling */
+.navbar-icon {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.navbar-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Menampilkan navbar menu jika checkbox dicentang */
+.navbar-toggle:checked + .navbar-icon + .navbar-menu {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #128C7E;
+    padding: 15px;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsif - Menampilkan hamburger dan toggle menu */
+@media screen and (max-width: 768px) {
+    /* Menyembunyikan navbar menu pada layar kecil */
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Menampilkan navbar icon (hamburger) */
+    .navbar-icon {
+        display: flex;
+    }
+    
+    /* Mengubah ukuran font link menu ketika di responsif */
+    .navbar-menu li a {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #home {
+        padding: 80px 0;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    #home h1 {
+        font-size: 36px;
+    }
+
+    #home p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    #projects .project-item {
+        margin: 15px 0;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+
+    #introduction {
+        padding: 80px 0;
+    }
+
+    .intro-text {
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .intro-img-container {
+        max-width: 300px;
+    }
+
+    .intro-img {
+        width: 100%;
+        height: auto;
+    }
+}
