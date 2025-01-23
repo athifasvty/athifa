@@ -53,17 +53,26 @@ h1, h2, h3 {
         transform: translateY(0);
     }
 }
-
+/* 
 #home .profile-img {
     width: 400px;
-    /* height: 350px; */
+   
     max-width: 400PX;
     height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease; 
+    animation: zoomIn 1s ease-out; 
+} */
+#home .profile-img {
+    width: 450px;
+    height: 450px;
     object-fit: cover;
     border-radius: 50%;
     transition: transform 0.3s ease; /* Transisi gambar */
     animation: zoomIn 1s ease-out; /* Animasi gambar zoom-in */
 }
+
 
 @keyframes zoomIn {
     0% {
